@@ -1,0 +1,9 @@
+QuestionID,QuestionText,Answer1,Answer2,Answer3,Answer4
+V2,What country are you from?,Very important,Rather important,Not very important,Not at all important
+V3,PersonID,,,,
+V4,How import is your Family,Very important,Rather important,Not very important,Not at all important
+V5,How import are your Friends?,Very important,Rather important,Not very important,Not at all important
+V6,How important is Leisure time?,Very important,Rather important,Not very important,Not at all important
+V7,How important is Politics?,Very important,Rather important,Not very important,Not at all important
+V8,How important is Work?,Very important,Rather important,Not very important,Not at all important
+V9,How important is Religion?,Very important,Rather important,Not very important,Not at all important

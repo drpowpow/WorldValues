@@ -6,7 +6,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-.idea/workspace.xml
+C:/Users/Alicia/PycharmProjects/WorldValues/.idea/workspace.xml
 .RData
 .Rhistory
 .Python

@@ -1,9 +1,29 @@
-QuestionID,QuestionText,Answer1,Answer2,Answer3,Answer4
-V2,What country are you from?,Very important,Rather important,Not very important,Not at all important
-V3,PersonID,,,,
-V4,How import is your Family,Very important,Rather important,Not very important,Not at all important
-V5,How import are your Friends?,Very important,Rather important,Not very important,Not at all important
-V6,How important is Leisure time?,Very important,Rather important,Not very important,Not at all important
-V7,How important is Politics?,Very important,Rather important,Not very important,Not at all important
-V8,How important is Work?,Very important,Rather important,Not very important,Not at all important
-V9,How important is Religion?,Very important,Rather important,Not very important,Not at all important
+QuestionID,QuestionText,Answer1,Answer2,Answer3,Answer4,Answer5,Answer6,Answer7,Answer8,Answer9,Answer10,Show,QuestOrder
+V2,What country are you from?,Very important,Rather important,Not very important,Not at all important,,,,,,,1,1
+V3,PersonID,,,,,,,,,,,0,2
+V4,How important is your Family,Very important,Rather important,Not very important,Not at all important,,,,,,,1,3
+V5,How important are your Friends?,Very important,Rather important,Not very important,Not at all important,,,,,,,1,4
+V6,How important is Leisure time?,Very important,Rather important,Not very important,Not at all important,,,,,,,1,5
+V7,How important is Politics?,Very important,Rather important,Not very important,Not at all important,,,,,,,1,6
+V8,How important is Work?,Very important,Rather important,Not very important,Not at all important,,,,,,,1,7
+V9,How important is Religion?,Very important,Rather important,Not very important,Not at all important,,,,,,,1,8
+V12,Independence,Mentioned,Not Mentioned,Inappropriate,,, ,,,,,0,9
+V13,Hard Work,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,10
+V14,Feeling of responsibility,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,11
+V15,Imagination,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,12
+V16,Tolerance and respect for other people,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,13
+V17,"Thrift, saving money and things",Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,14
+V18,Determination and perseverance,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,15
+V19,Religious faith,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,16
+V20,Unselfishness (in spanish generosity),Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,17
+V21,Obedience,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,18
+V22,Self-expression,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,19
+V23,"All things considered, how satisfied are you with your life as a whole these days?",1,2,3,4,5,6,7,8,9,10,0,20
+V242,Age,,,,,,,,,,,0,21
+V238,"People sometimes describe themselves as belonging to the working class, the middle class, or the upper or lower
+class. Would you describe yourself as belonging to the:",Upper class,Upper middle class,Lower middle class,Working class,Lower class,,,,,,0,22
+V240,Gender,Male,Female,,,,,,,,,0,23
+V245,Were you born in this country or are you an immigrant?,I am born in this country,I am an immigrant to this country,,,,,,,,,0,24
+V248,What is the highest educational level that you have attained?,,,,,,,,,,,0,25
+V250,Do you live with your parents?,Yes,No,,,,,,,,,0,26
+V255,Are you literate or illiterate?,Literate,Illiterate,,,,,,,,,0,27

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+          {% for question in questions %}
+        <dt>{{question.question}}
+        <dt>Answers:
+        <dt><input type="radio" name={{question.questionnum}} value=3> {{question.answer1}}<br>
+        <dt><input type="radio" name={{question.questionnum}} value=2>{{question.answer2}}<br>
+        <dt><input type="radio" name={{question.questionnum}} value=1>{{question.answer3}}<br>
+        <dt><input type="radio" name={{question.questionnum}} value=0>{{question.answer4}}<br>
+          {% endfor %}
+        <dd><input type=submit value=Submit>
+      </dl>
+    </form>
+  {% endif %}
+
+{% endblock %}
+

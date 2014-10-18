@@ -12,8 +12,13 @@
     </form>
   {% endif %}
   <ul class=entries>
-  {% for entry in entries %}
-    <li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}
+  {% for question in questions %}
+    <li><h2>{{ question.question }}</h2>
+        {% for answer in answers %}
+     <li>  <h2>{{ answer.answer1 }}</h2>
+        <p>{{ answer.answer2|safe }}</p>
+       <p> {{ answer.answer3|safe }}</p></li>
+          {% endfor %}
   {% else %}
     <li><em>Unbelievable.  No entries here so far</em>
   {% endfor %}

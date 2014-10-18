@@ -6,6 +6,9 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.idea/workspace.xml
+.RData
+.Rhistory
 .Python
 env/
 build/
@@ -64,7 +67,8 @@ target/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*

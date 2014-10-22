@@ -1,5 +1,5 @@
 QuestionID,QuestionText,Answer1,Answer2,Answer3,Answer4,Answer5,Answer6,Answer7,Answer8,Answer9,Answer10,Show,QuestOrder
-V2,What country are you from?,Very important,Rather important,Not very important,Not at all important,,,,,,,1,1
+V2,What country are you from?,Very important,Rather important,Not very important,Not at all important,,,,,,,2,1
 V3,PersonID,,,,,,,,,,,0,2
 V4,How important is your Family,Very important,Rather important,Not very important,Not at all important,,,,,,,1,3
 V5,How important are your Friends?,Very important,Rather important,Not very important,Not at all important,,,,,,,1,4
@@ -19,11 +19,12 @@ V20,Unselfishness (in spanish generosity),Mentioned,Not Mentioned,Inappropriate,
 V21,Obedience,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,18
 V22,Self-expression,Mentioned,Not Mentioned,Inappropriate,,,,,,,,0,19
 V23,"All things considered, how satisfied are you with your life as a whole these days?",1,2,3,4,5,6,7,8,9,10,0,20
-V242,Age,,,,,,,,,,,0,21
+V242,Age,,,,,,,,,,,2,21
 V238,"People sometimes describe themselves as belonging to the working class, the middle class, or the upper or lower
-class. Would you describe yourself as belonging to the:",Upper class,Upper middle class,Lower middle class,Working class,Lower class,,,,,,0,22
-V240,Gender,Male,Female,,,,,,,,,0,23
-V245,Were you born in this country or are you an immigrant?,I am born in this country,I am an immigrant to this country,,,,,,,,,0,24
+class. Would you describe yourself as belonging to the:",Upper class,Upper middle class,Lower middle class,Working class,Lower class,,,,,,2,22
+V240,Gender,Male,Female,,,,,,,,,2,23
+V245,Were you born in this country or are you an immigrant?,I am born in this country,I am an immigrant to this country,,,,,,,,,2,24
 V248,What is the highest educational level that you have attained?,,,,,,,,,,,0,25
 V250,Do you live with your parents?,Yes,No,,,,,,,,,0,26
 V255,Are you literate or illiterate?,Literate,Illiterate,,,,,,,,,0,27
+V144,"Do you belong to a religion or religious denomination?. If yes, which one?",,,,,,,,,,,0,28

@@ -32,8 +32,8 @@ def populate_db():
     db.commit()
     with open('answersonly.csv','rb') as fin:
         dr=csv.DictReader(fin)
-        to_db=[(i['ID'],i['V2'],i['V3'],i['V4'],i['V5'],i['V6'],i['V7'],i['V8'],i['V9'],i['V12'],i['V13'],i['V14'],i['V15'],i['V16'],i['V17'],i['V18'],i['V19'],i['V20'],i['V21'],i['V22'],i['V23'],i['V242'],i['V238'],i['V240'],i['V245'],i['V248'],i['V250'],i['V255']) for i in dr]
-    cur.executemany("INSERT INTO answersonly (ID,V2,V3,V4,V5,V6,V7,V8,V9,V12,V13,V14,V15,V16,V17,V18,V19,V20,V21,V22,V23,V242,V238,V240,V245,V248,V250, V255) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);", to_db)
+        to_db=[(i['ID'],i['V2'],i['V3'],i['V4'],i['V5'],i['V6'],i['V7'],i['V8'],i['V9'],i['V12'],i['V13'],i['V14'],i['V15'],i['V16'],i['V17'],i['V18'],i['V19'],i['V20'],i['V21'],i['V22'],i['V23'],i['V242'],i['V238'],i['V240'],i['V245'],i['V248'],i['V250'],i['V255'],i['V144'],i["CountryName"],i["GenderName"]) for i in dr]
+    cur.executemany("INSERT INTO answersonly (ID,V2,V3,V4,V5,V6,V7,V8,V9,V12,V13,V14,V15,V16,V17,V18,V19,V20,V21,V22,V23,V242,V238,V240,V245,V248,V250, V255, V144, CountryName, GenderName) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);", to_db)
     db.commit()
     with open('countriesonly.csv','rb') as fin:
         dr=csv.DictReader(fin)
@@ -44,7 +44,9 @@ def populate_db():
 
 #load data into solr
 #curl http://localhost:8983/solr/collection1/update/csv?stream.file=c:/Users/Alicia/PycharmProjects/WorldValues/answersonly.csv
-
+#delete data from solr (put in browser window)
+#http://localhost:8983/solr/update?stream.body=<delete><query>*:*</query></delete>
+#http://localhost:8983/solr/update?stream.body=<commit/>
 #input data in sqlite3; .header on; .mode csv; .import questionsonly.csv questionsonly
 #  .import answersonly.csv answersonly ;import countriesonly.csv countriesonly;
 def connect_db():

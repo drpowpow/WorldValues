@@ -1,14 +1,19 @@
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 import sqlite3
 import pdb
+from mysolr import Solr
+import requests
 from contextlib import closing
 from flask.ext.sqlalchemy import SQLAlchemy
+
 #configuration must have the full path
 DATABASE = 'c:/Users/Alicia/PycharmProjects/WorldValues/worldvalues.db'
 DEBUG=True
 SECRET_KEY='development key'
 USERNAME='admin'
 PASSWORD = 'default'
+solr = Solr('http://localhost:8983/solr/#/collection1')
+
 
 app = Flask(__name__)
 app.debug = True
@@ -39,32 +44,49 @@ def show_entries():
 def add_entry():
     #if not session.get('logged_in'):
     #    abort(401)
-    #pdb.set_trace()
-    #todo: update database for response
-    #todo: write responses
     #todo: query solr
     #request.form is an immtauble multi dictionary
     #imd=request.form;imd.to_dict();iterate over dictionary for key,value in d.iteritems():;get keys d.keys() or values d.values()
     if request.method == "POST":
-        g.db.execute('insert into entries ("title","text") values (?,?)', ["V5", request.form['V5']])
+        #post to database
+        imd = request.form.to_dict()
+        keys = imd.keys()
+        values = imd.values()
+        listofanswers = str(keys)[1:-1]
+        quest="?," * (len(keys)-1)+"?"
+        sqlcommand="insert into newresponse ("+listofanswers+") values("+quest+")"
+        g.db.execute(sqlcommand,values)
         g.db.commit()
-        #imd=request.form.to_dict()
-        #keys=imd.keys()
-        #values=imd.values()
-        #listofanswers=str(keys)[1:-1]
-        #quest="?," * (len(keys)-1) +?
-        #sqlcommand="insert into newresponse ("+listofanswers+") values("+quest+")"
-        #g.db.execute(sqlcommand,values)
+        documents=lookup(imd)
+        flash('New entry was successfully posted')
+        #query solr
+        # -4:Not asked, -3:Not Applicable, -2:No Answer, -1: Don't know
+    return render_template('search.html',documents=documents)
+
+def lookup(imd):
+        curquest= g.db.execute('select QuestionID from questionsonly where show=1 order by QuestOrder desc')
+        allquestions=[]
+        query=""
+        for row in curquest.fetchall():
+            allquestions.append(row[0])
+        #pdb.set_trace()
+        for quest in allquestions:
+            if quest in imd.keys():
+                i=imd.keys().index(quest)
+                query=query+'+'+str(quest)+":"+str(imd.values()[i])+" "
+            #else:
+                #query=query+" +"+str(quest)+":"+'"-2"'
+
+        response = solr.search(q=query,rows=10, start=0)
+        #response = solr.search(q='+V2:12 +V5:3',rows=10, start=0)
+        documents = response.documents
+        #pdb.set_trace()
+        return documents;
         #solrquery=
 
-    '''
-    g.db.execute('insert into entries (title, text) values (?, ?)',
-                 [request.form['title'], request.form['text']])
-    g.db.commit()
-    '''
-    flash('New entry was successfully posted')
-    return redirect(url_for('show_entries'))
 #todo: add translation with jinja and babel
+#todo: refactor with create query as its own thing
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None

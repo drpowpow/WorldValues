@@ -5,7 +5,6 @@
       <dl>
           {% for question in questions %}
         <dt>{{question.question}}
-        <dt>Answers:
         <dt><input type="radio" name={{question.questionnum}} value=3> {{question.answer1}}<br>
         <dt><input type="radio" name={{question.questionnum}} value=2>{{question.answer2}}<br>
         <dt><input type="radio" name={{question.questionnum}} value=1>{{question.answer3}}<br>

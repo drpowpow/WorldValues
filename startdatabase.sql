@@ -39,7 +39,10 @@ V240 integer,
 V245 integer,
 V248 integer,
 V250 integer,
-V255 integer
+V255 integer,
+V144 integer,
+GenderName text,
+CountryName text
 );
 drop table if exists questionsonly;
 create table questionsonly(
@@ -58,10 +61,10 @@ create table questionsonly(
  Show int,
  QuestOrder int
 );
-drop table if exist newresponse;
+drop table if exists newresponse;
 create table newresponse(
- UserID text primary key autoincrement,
- V2 integer,
+SessionID integer primary key autoincrement,
+V2 integer,
 V3 integer,
 V4 integer,
 V5 integer,
